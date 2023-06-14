@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>CN Virtual Blood Typing Lab</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+        <style>
+            h1 {
+            font-size: 6vw; /* Set initial font size using viewport width (vw) unit */
+        }
+
+        /* Media query to adjust font size based on screen width */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 10vw; /* Increase font size for smaller screens */
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: px; color: #ff0000; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
+            CN Virtual Blood Typing Lab
+        </h1>
+        <div id="homeScrn" class="scrn">
+            <button onclick="setScreen('gameScrn')" style="transform: translateX(-50%) translateY(-50%); left: 50%; top: 50%; position: absolute; font-size: 50px; background-color: red;">Start</button>
+        </div>
+        <div id="gameScrn" class="scrn" hidden>
+            <div class="container" style="border-radius: 15px; width: 50%; height: 50%; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); border-style: solid; border-color: black; border-width: 2px; background-color: lightgray;">
+                <label class="label" style="left: 25%; top: 7.5%;">A</label>
+                <label class="label" style="left: 75%; top: 7.5%;">B</label>
+                <label class="label" style="left: 50%; top: 57.5%;">Rh</label>
+                <div class="bloodTray" style="top: 12.5%; left: 12.5%;"></div>
+                <div class="bloodTray" style="top: 12.5%; left: 62.5%;"></div>
+                <div class="bloodTray" style="top: 62.5%; left: 37.5%;"></div>
+                <div id="A" class="blood" style="top: 12.5%; left: 12.5%;"></div>
+                <div id="B" class="blood" style="top: 12.5%; left: 62.5%;"></div>
+                <div id="Rh" class="blood" style="top: 62.5%; left: 37.5%;"></div>
+            </div>
+            <div style="bottom: 0%; width: 100%; position: fixed; text-align: center; padding: 2.5%;">
+                <button class="add-button" id="addBloods">Add bloods</button>
+                <button class="add-button" id="addA" disabled>Add Anti-A</button>
+                <button class="add-button" id="addB" disabled>Add Anti-B</button>
+                <button class="add-button" id="addRh" disabled>Add Anti-Rh</button>
+            </div>
+        </div>
+    </body>
+    <script src="./code.js"></script>
+</html>
